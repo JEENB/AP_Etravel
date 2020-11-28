@@ -97,7 +97,8 @@
 	margin-top: 20px;
 }
 #nav-bar .btn:hover {
-	background-color: #0f5EEE ;
+	background-color: #415c97 ;
+	color: white;
 }
 
 
@@ -230,16 +231,19 @@
 }
 
 .destinations .title {
-	margin-top: 4px;
+	padding-left: 3px;
+	margin: 5px;
 	text-transform: uppercase;
+	font-weight: 600;
 }
 
 .destinations .city {
-	margin-top: 4px;
-	padding: 1cm;
+	padding-left: 3px;
+	margin: 5px;
 }
 .destinations .price {
-	margin-top: 4px;
+	padding-left: 3px;
+	margin: 5px;
 }
 .destinations .after {
 	border: 2px solid red;
@@ -297,10 +301,12 @@
 	padding: 7px;
 	font-family: "Roboto", sans-serif;
 	background-color: #e37a23;
-	font-weight: 900;
+	font-weight: 700;
 }
 .destinations .btn:hover {
-	background: #0f5EEE;
+	background: #415c97;
+	color: white;
+
 	
 }
 
@@ -585,13 +591,13 @@ hr.footer-line{
 	text-align: center;
 }
 
-.form-signin input[type=email]{
+.form-signin input[type=text]{
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 	width: 50%;
 	border-width: 2px;
-	border-color: blue;
+	border-color: #e37a23;
 	height: 40px;
 	border-radius: 10px;
 }
@@ -601,17 +607,17 @@ hr.footer-line{
 	display: block;
 	width: 50%;
 	border-width: 2px;
-	border-color: blue;
+	border-color: #e37a23;
 	height: 40px;
 	border-radius: 10px;
 }
 .form-signin .btn{
 	padding: 5px 10px;
-	background-color:blue;
+	background-color: #e37a23;
 }
 .form-signin .btn:hover {
 	color: #fff;
-	background: black;
+	background: #0f5EEE;
 	border-color: #000;
 	opacity: 0.8;	
 }
@@ -682,6 +688,15 @@ hr.footer-line{
 	border-radius: 5px;
   }
 
+.singup-form input[type=email] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #fff4f4;
+	border-radius: 5px;
+  }
 .singup-form input[type=password] {
 	width: 100%;
 	padding: 15px;
@@ -691,8 +706,17 @@ hr.footer-line{
 	background: #fff4f4;
 	border-radius: 5px;
   }
+  .singup-form input[type=number] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #fff4f4;
+	border-radius: 5px;
+  }
 .singup-form button {
-	background-color: blue;
+	background-color: #e37a23;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -703,11 +727,21 @@ hr.footer-line{
 .singup-form button:hover {
 	opacity:1;
   }
-.singup-form input[type=text]:focus, input[type=password]:focus {
-	background-color: #A3A3A3;
-	outline: none;
-  }
 
+
+
+.singup-form img{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+.singup-form .after {
+	border: 2px solid #415c97;
+	border-radius: 75px;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: -2px;
+}
 .singup-form hr {
 	border: 1px solid #f1f1f1;
 	margin-bottom: 25px;
@@ -715,12 +749,17 @@ hr.footer-line{
 .singup-form .cancelbtn{
 	float: left;
 	width: 50%;
-	background-color: red;
+	background-color: #415c97;
   }
 .singup-form .signupbtn {
 	float: left;
 	width: 50%;
-	background-color: blue;
+	background-color: #e37a23;
+  }
+
+.singup-form .signupbtn:hover {
+	background: #415c97;
+	color: white;
   }
 .singup-form .container {
 	padding: 16px;
@@ -814,7 +853,7 @@ font-size: 24px;
 }
 
 #billing-page .btn {
-	background-color:#0f5EEE;
+	background-color:#e37a23;
 	color: white;
 	padding: 12px;
 	margin: 5px 0;
@@ -827,7 +866,7 @@ font-size: 24px;
 
 
 #billing-page .btn:hover {
-background-color: red;
+background-color: #415c97;
 }
 
 #billing-page h3 {
@@ -873,6 +912,8 @@ background-color: red;
 
 .hotels .title {
 	margin-top: 4px;
+	font-weight: 600;
+
 }
 .hotels .after {
 	border: 2px solid red;
@@ -961,10 +1002,11 @@ background-color: red;
 	padding: 7px;
 	font-family: "Roboto", sans-serif;
 	background-color: #e37a23;
-	font-weight: 900;
+	font-weight: 700;
 }
 .hotels .btn:hover {
-	background: #0f5EEE;
+	background: #415c97;
+	color: white;
 	
 }
 
@@ -1125,7 +1167,7 @@ background-color: red;
 	border: none
 }
 #details .btn:hover {
-	background-color: red;
+	background-color: #415c97;
 }
 
 #details .small-img-row {
@@ -1207,7 +1249,7 @@ background-color: red;
 	margin-top: 4px;
 }
 #details .after {
-	border: 2px solid red;
+	border: 2px solid #415c97;
 	border-radius: 75px;
 	width: 60%;
 	margin-left: 20%;
@@ -1291,4 +1333,15 @@ background-color: red;
 
 #reviews .review-form textarea {
 	width: 100%;
+}
+
+.message{
+	float: left; 
+	margin-left: 20px; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 700; 
+	background-color: rgb(178, 223, 178);
+	padding: 7px; 
+	border-radius: 5px;
+	font-size: 12px;
 }

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Signup {% endblock %}
+{% block body %}
+{% load static %}
+
+
+    <div class="container">
+      <h1>Sign Up</h1>
+
+      <form class="singup-form" method= "POST">
+        {% csrf_token %}
+        <fieldset>
+          {{ form.as_p }}
+      </fieldset>
+        <p>By creating an account you agree to our <a href="/terms/" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+      </form>
+
+      
+
+
+{% endblock %} 
+
+{% block footer %} {% include 'footer.html' %}{% endblock %}

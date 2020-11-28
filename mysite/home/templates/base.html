@@ -72,30 +72,38 @@
                         <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="profile.html">Profile</a>
-                          <a class="dropdown-item" href="signin.html">Login</a>
-                          <a class="dropdown-item" href="singup.html">Sign Up</a>
+                          <a class="dropdown-item" href="/login/">Login</a>
+                          <a class="dropdown-item" href="/signup/">Sign Up</a>
                         </div>
                       </li>
                     </ul>
-                    <a href="singup.html" class="btn btn-secondary">Sign up</a>
-                    <a href="signin.html" class="btn btn-secondary">Log in</a>  
+                    <a href="/signup/" class="btn btn-secondary">Sign up</a>
+                    <a href="/login/" class="btn btn-secondary">Log in</a>  
                 {% else %}
                   <li class="nav-item dropdown">
-                    <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+                    <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.first_name }}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="profile.html"> My Profile</a>
+                      <a class="dropdown-item" href="/user/"> My Profile</a>
                       <a class="dropdown-item" href="signin.html">My Destination</a>
                       <a class="dropdown-item" href="signin.html">My Orders</a>
-                      <a class="dropdown-item" href="singup.html">Logout</a>
+                      <a class="dropdown-item" href="/signout/">Logout</a>
                     </div>
                   </li>
                 </ul>
-                  <a href="singup.html" class="btn btn-secondary">Log out</a>
+                  <a href="/signout/" class="btn btn-secondary">Log out</a>
                 {% endif %}
               
                 </div>
             </nav>
         </section>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
 
     {% block body %} {% endblock %}
     

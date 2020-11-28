@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} My Profile {% endblock %}
+{% block body %}
+
+<section id="billing-page">
+    <div class="col-75">
+      <div class="container">
+        <form class="checkout-form" action="/action_page.php">
+          <div class="row">
+            <div class="col-50">
+              <h3>My Profile </h3>
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="{{ prof.user.first_name }} {{ prof.user.last_name }}" readonly>
+              <label for="email"> Email</label>
+              <input type="text" id="email" name="email" placeholder="{{ prof.user.email }}" readonly>
+              <label for="adr">Contact</label>
+              <input type="text" id="adr" name="address" placeholder="{{ prof.contact }}" readonly>
+              <label for="adr">Address</label>
+              <input type="text" id="adr" name="address" placeholder="{{ prof.address }}" readonly>
+              <label for="city"> City</label>
+              <input type="text" id="city" name="city" placeholder="{{ prof.city }}" readonly >
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="{{ prof.state }}" readonly >
+                </div>
+                <div class="col-50">
+                  <label for="zip">Pincode</label>
+                  <input type="text" id="zip" name="zip" placeholder="{{ prof.pincode }}" readonly >
+                </div>
+              </div>
+              <label for="city"> Country</label>
+              <input type="text" id="city" name="city" placeholder="{{ prof.country }}" readonly >
+            </div>
+  
+            
+          </div>
+          <a href="/user/update-profile" class="btn">Update Profile</a>
+          <a href="/user/password" class="btn">Update Password</a>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+</section>
+
+
+
+
+{% endblock %} 
+
+{% block footer %} {% include 'footer.html' %}{% endblock %}

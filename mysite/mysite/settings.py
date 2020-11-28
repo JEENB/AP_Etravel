@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'home',
     'hotel',
+    'user',
 ]
 
 MIDDLEWARE = [
