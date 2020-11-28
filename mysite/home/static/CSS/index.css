@@ -1249,7 +1249,7 @@ background-color: #415c97;
 	margin-top: 4px;
 }
 #details .after {
-	border: 2px solid #415c97;
+	border: 2px solid #0f5EEE;
 	border-radius: 75px;
 	width: 60%;
 	margin-left: 20%;
@@ -1303,7 +1303,8 @@ background-color: #415c97;
 	background-color: #e37a23;
 }
 .tab button.active {
-	background-color: #60A7F3;
+	background-color: #0f5EEE;
+	color: white;
 }
 
 #reviews .fa{

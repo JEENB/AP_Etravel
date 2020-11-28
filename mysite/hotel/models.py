@@ -2,6 +2,9 @@ from django.db import models
 from ckeditor_uploader.fields import  RichTextUploadingField
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+from django.forms import ModelForm
+from django.contrib.auth.models import User
+from django.db.models import Avg, Count
 
 # Create your models here.
 
@@ -37,6 +40,22 @@ class Hotel(models.Model):
     rooms       = models.IntegerField()
     slug        = models.SlugField(unique = True, null = False, max_length=20)
 
+#django aggregation to count reviews and average reviews
+    def countrev(self):
+        countreview = Review.objects.filter(hotel= self).aggregate(count=Count('id'))
+        counter = int(countreview["count"])
+        return counter
+
+    def averagerev(self):
+        averagereview = Review.objects.filter(hotel= self).aggregate(average=Avg('rate'))
+        if averagereview["average"] is None:
+            avg = 0
+            return avg
+        else:
+            avg = float(averagereview["average"])
+            return avg
+
+
     def get_absolute_url(self):
         return reverse('hotel_title', kwargs={'slug': self.slug})
 
@@ -54,3 +73,26 @@ class Images(models.Model):
 
     def __str__(self):
         return self.hotel.title
+
+class Review(models.Model):
+    user    = models.ForeignKey(User, on_delete= models.CASCADE)
+    hotel   = models.ForeignKey(Hotel, on_delete= models.CASCADE)
+    comment = models.CharField(max_length=1000)
+    rate    = models.IntegerField(default=0,)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.hotel.title
+        
+    @property
+    def hotel_name(self):
+        return (self.hotel.title)
+
+
+    
+        
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ['comment', 'rate']

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home import urls
 from user import urls
+from hotel import urls
 from user import views as userviews
 
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('login/', userviews.loginform, name= 'loginform'),
     path('signup/', userviews.signupform, name= 'signupform'),
     path('user/', include('user.urls')),
+    path('hotel/', include('hotel.urls')),
 
 
 ]

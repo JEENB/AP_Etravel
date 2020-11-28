@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from hotel.models import Hotel, Category, Images
+from hotel.models import Hotel, Category, Images, Review
 from .forms import Search
 import json
 # Create your views here.
@@ -63,12 +63,12 @@ def hotel_detail_view(request, id, slug):
     hotel      = Hotel.objects.get(pk = id)
     img         = Images.objects.filter(hotel_id= id)
     more_like   = Hotel.objects.all().order_by('?')[:4]
-    # reviews     = Review.objects.filter(product_id = id).order_by('?')[:4]
+    reviews     = Review.objects.filter(hotel_id = id).order_by('?')[:4]
     context     = {
         'hotel'   : hotel,
         'more_like' : more_like,
         'img'       : img,
-        # 'reviews'   : reviews
+        'reviews'   : reviews
     }
     return render(request, 'hotel_detail.html', context)
 

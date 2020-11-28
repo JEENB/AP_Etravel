@@ -48,11 +48,11 @@
                       <img src="{{ hotel.image }}" alt="">
                     </a>
                     <div class="star-rating">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star-o"></i>    
+                      <i class="fa fa-star{% if hotel.averagerev < 1 %}-o empty{% endif %}"></i>
+                      <i class="fa fa-star{% if hotel.averagerev < 2 %}-o empty{% endif %}"></i>
+                      <i class="fa fa-star{% if hotel.averagerev < 3 %}-o empty{% endif %}"></i>
+                      <i class="fa fa-star{% if hotel.averagerev < 4 %}-o empty{% endif %}"></i>
+                      <i class="fa fa-star{% if hotel.averagerev < 5 %}-o empty{% endif %}"></i>    
                     </div>
                     <p class="item-price" style="text-transform: uppercase;"><span>{{ hotel.title }}</span></p>
                     <p class="item-price"><span>Rs.{{ hotel.price }}/night</span></p>

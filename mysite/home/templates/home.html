@@ -121,11 +121,11 @@
                 <div><p class="price">Rs. {{ hotel.price }} /night</p>
                 <p class="city">{{ hotel.location }}, {{ hotel.country }}</p></div>
                 <div class="star-rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o"></i>    
+                  <i class="fa fa-star{% if hotel.averagerev < 1 %}-o empty{% endif %}"></i>
+                  <i class="fa fa-star{% if hotel.averagerev < 2 %}-o empty{% endif %}"></i>
+                  <i class="fa fa-star{% if hotel.averagerev < 3 %}-o empty{% endif %}"></i>
+                  <i class="fa fa-star{% if hotel.averagerev < 4 %}-o empty{% endif %}"></i>
+                  <i class="fa fa-star{% if hotel.averagerev < 5 %}-o empty{% endif %}"></i>   
                 </div>
                 <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-secondary">View Details</a>
               </div>
