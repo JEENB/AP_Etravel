@@ -1,0 +1,267 @@
+{% extends 'base.html' %}
+{% block title %} {{ hotel.title }}  {% endblock %}
+{% block body %}
+{% load static %}
+
+<section id="details">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="{{ hotel.image }}" width="100%" id="productImg">
+          <div class="small-img-row">
+            {% for pic in img %}
+            <div class="small-img-col">
+              <img src="{{ pic.image }}" width="100%" class="small-img">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col">
+          <h1> {{hotel.title}}, {{ hotel.location }}</h1>
+          <div class="star-rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>    
+          </div>
+          <h4>Rs.{{ hotel.price }}/night</h4>
+          <h5><b>Location Overview</b></h5>
+          <p>{{ hotel.location_overview }}
+            </p>
+          <p></p>
+          <form >
+            <div class="form-container">
+              <div class="form-group">
+                <label for="check-in">Check In</label>
+                <br>
+                <input type="date" id="check-in">
+              </div>
+
+              <div class="form-group">
+                <label for="check-in">Check Out</label><br>
+                <input type="date" id="check-in">
+              </div>
+
+              <div class="form-group guest">
+                <label for="guests">Guests</label><br>
+                <input list="guests" name="guests" id="guest" placeholder="1 Guest">
+                <datalist id="guests">
+                  <option value="1 Guest"></option>
+                  <option value="2 Guests"></option>
+                  <option value="3 Guests"></option>
+                  <option value="4 Guests"></option>
+                  <option value="5 Guests"></option>
+                  <option value="6 Guests"></option>
+                  <option value="7 Guests"></option>
+                </datalist>
+              </div>
+            </div>
+          </form>
+          <a href="#" class="btn btn-primary">Book</a>
+        </div>
+      </div> 
+    </div>
+    
+</section>
+
+<section id="reviews">
+    <div class="nav-tabs">
+      <div class="tab">
+        <button class="tablinks" onclick="openItem(event, 'Description')" id="defaultOpen">Description</button>
+        <button class="tablinks" onclick="openItem(event, 'Information')">Amenities</button>
+        <button class="tablinks" onclick="openItem(event, 'Reviews')">Reviews (1)</button>
+      </div>
+      <div id="Description" class="tabcontent">
+        <h5>Hotel Description</h5>
+          <div class="star-rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>    
+          </div>
+          <h6>Rs {{ hotel.price }}/night</h6>
+          <p>{{ hotel.description|safe }}
+          </p>
+        
+      </div>
+      
+      <div id="Information" class="tabcontent">
+        <h5>Amenities</h5>
+        <table class="table table-striped table-bordered mt-3">
+            
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">AC</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">TV</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">Free Wifi</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">Kitchen</th>
+              <td><em>No</em></td>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">Geyser</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">Powerbackup</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th scope="row" class="w-150 dark-grey-text h6">Parking Facilities</th>
+              <td><em>Yes</em></td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      
+      <div id="Reviews" class="tabcontent">
+        <h5><span>1</span> review for <span>Le Meridian, Paro</span></h5>
+          <div>
+            <img src="images/download.png" width="62" alt="Generic placeholder image">
+            <div>
+              <div>
+                <p>
+                  <strong>Ned </strong>
+                  <span>– </span><span>November 26, 2020</span>
+                </p>
+                <div class="star-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>    
+                </div>
+              </div>
+              <p>Amazing accommodation at a reasonable price!</p>
+            </div>
+          </div>
+  
+          <hr>
+          <h5>Add a review</h5>
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Outstanding"></label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Very Good"></label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good"></label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor"></label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor"></label>
+          </fieldset>
+          <div>
+            <!-- Your review -->
+            <div class="review-form">
+              <textarea id="review-form" rows="4" placeholder="Your Review"></textarea>
+            </div>
+            <div class="review-form">
+              <input type="text" id="form75" placeholder="Name">
+            </div>
+            <div class="review-form">
+              <input type="email" id="form77"  placeholder="Email">
+            </div>
+            <div class="text-right pb-2">
+              <button type="button" class="btn btn-primary">Add a review</button>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script>
+      function openItem(evt, ItemName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(ItemName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      document.getElementById("defaultOpen").click();
+    </script>
+
+<script>
+    var productImg = document.getElementById("productImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function()
+        {
+        productImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function()
+        {
+        productImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function()
+        {
+        productImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function()
+        {
+        productImg.src = SmallImg[3].src;
+        }
+</script>
+</section>
+
+<section class="destinations">
+  <div class="topic">
+    <h2 class="title">More Hotels</h2>
+    <div class="after"></div>
+  </div>
+  <div class="row">
+  {% for hotel in more_like %}
+    <div class="col">
+      <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}">
+        <img src="{{ hotel.image }}" alt="">
+      </a>
+     
+      <div class="view">
+        <div><h4 class="title">{{ hotel.title }}</h4></div>
+        <div><p class="price">Rs. {{ hotel.price }} /night</p>
+        <p class="city">{{ hotel.location }}, {{ hotel.country }}</p></div>
+        <div class="star-rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>    
+        </div>
+        <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-secondary">View Details</a>
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+
+</section>
+
+
+{% endblock %}
+{% block footer %} {% include 'footer.html' %}{% endblock %}

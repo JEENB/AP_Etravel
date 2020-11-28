@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Search  {% endblock %}
+{% block body %}
+{% load static %}
+
+<section class="destinations">
+    <div class="topic">
+      <h2 class="title">Your Search Result</h2>
+      <div class="after"></div>
+    </div>
+    
+    <div class="row">
+        {% if search_hotel  %}
+            {% for hotel in search_hotel %}
+            <div class="col">
+                <a href="">
+                <img src="{{ hotel.image }}" alt="">
+                </a>
+            
+                <div class="view">
+                <div><h4 class="title">{{ hotel.title }}</h4></div>
+                <div><p class="price">Rs. {{ hotel.price }} /night</p>
+                <p class="city">{{ hotel.location }}, {{ hotel.country }}</p></div>
+                <div class="star-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>    
+                </div>
+                <a href="#" class="btn btn-secondary">View Details</a>
+                </div>
+            </div>
+        
+            {% endfor %}
+
+        {% else %}
+            <img style="display: block; margin-left: auto; margin-right: auto; width: 50%; padding-top: 1cm; padding-bottom: 1cm;" src="https://cdn.dribbble.com/users/37530/screenshots/2485318/no-results.png">
+            
+        
+        {% endif %}
+    </div>
+
+  </section>
+
+{% endblock %}
+{% block footer %} {% include 'footer.html' %}{% endblock %}

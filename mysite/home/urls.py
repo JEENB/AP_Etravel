@@ -25,4 +25,8 @@ urlpatterns = [
     path('terms/', views.terms_page_view, name='terms_page_view'),
     path('destination/nepal/', views.destination_nepal, name='destination_nepal'),
     path('destination/bhutan/', views.destination_bhutan, name='destination_bhutan'),
+    path('search/', views.search_page_view, name='search_page_view'),
+    path('search_ajax/', views.search_ajax, name='search_ajax'),
+    path('hotel/<int:id>/<slug:slug>/', views.hotel_detail_view, name='hotel_detail_view'),
+
 ]

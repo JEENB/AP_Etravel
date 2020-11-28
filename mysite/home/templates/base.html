@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" description="AP Programming group">
+        <meta name="keywords" description="e-commerce, boostrap, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% load static %}
+        <link rel="shortcut icon" href="{% static ''%}images/Phones/Samsung A21-2.webp">
+
+        <title style="text-transform: capitalize;">{% block title %} B&N Hotels{% endblock %}</title>
+
+        <!-- CSS linking-->
+        <link rel="stylesheet" type="text/css" href="{% static ''%}CSS/index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!---Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Merienda:wght@700&display=swap" rel="stylesheet">
+
+        
+        <!-- Javascript-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <!-- jQuery !-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+              
+        <!-- jQuery UI !-->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    </head>
+
+    <body>
+        <!--Navigation Bar-->
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="/"> <img src="{% static ''%}images/1f8ea1fd-33ca-4cb2-b230-8f3797798f7c_200x200.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="/home/">Home<span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Destination</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/destination/bhutan/">Bhutan</a>
+                          <a class="dropdown-item" href="/destination/nepal/">Nepal</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/terms/">Terms &amp; Conditions</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/aboutus/">Our team</a>
+                          <a class="dropdown-item" href="/contact/">Contact Us</a>
+                        </div>
+                      </li>
+                {% if user.id is None %}  
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="profile.html">Profile</a>
+                          <a class="dropdown-item" href="signin.html">Login</a>
+                          <a class="dropdown-item" href="singup.html">Sign Up</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <a href="singup.html" class="btn btn-secondary">Sign up</a>
+                    <a href="signin.html" class="btn btn-secondary">Log in</a>  
+                {% else %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="profile.html"> My Profile</a>
+                      <a class="dropdown-item" href="signin.html">My Destination</a>
+                      <a class="dropdown-item" href="signin.html">My Orders</a>
+                      <a class="dropdown-item" href="singup.html">Logout</a>
+                    </div>
+                  </li>
+                </ul>
+                  <a href="singup.html" class="btn btn-secondary">Log out</a>
+                {% endif %}
+              
+                </div>
+            </nav>
+        </section>
+
+    {% block body %} {% endblock %}
+    
+    {% block footer %} {% endblock %}
+
+    </body>
+</html>

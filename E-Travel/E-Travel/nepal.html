@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" description="AP Programming group">
+        <meta name="keywords" description="e-commerce, boostrap, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="shortcut icon" href="images/Phones/Samsung A21-2.webp">
+
+        <title>Nepal Hotels</title>
+
+        <!-- CSS linking-->
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!---Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Merienda:wght@700&display=swap" rel="stylesheet">
+
+        
+        <!-- Javascript-->
+        <script src="java/index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    
+    </head>
+
+    <body>
+        <!--Navigation Bar-->
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="index.html"> <img src="images/1f8ea1fd-33ca-4cb2-b230-8f3797798f7c_200x200.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Destination</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Bhutan</a>
+                          <a class="dropdown-item" href="#">Nepal</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="condition.html">Terms &amp; Conditions</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="about.html">Our team</a>
+                          <a class="dropdown-item" href="#">Contact Us</a>
+                          <a class="dropdown-item" href="#">Report an issue</a>
+                        </div>
+                    </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="profile.html">Profile</a>
+                          <a class="dropdown-item" href="signin.html">Login</a>
+                          <a class="dropdown-item" href="singup.html">Sign Up</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <a href="singup.html" class="btn btn-secondary">Sign up</a>
+                    <a href="signin.html" class="btn btn-secondary">Log in</a>  
+                </div>
+            </nav>
+        </section>
+
+        <section class="hotels">
+          <div class="topic">
+            <h2 class="title">Hotels In Nepal</h2>
+            <div class="after"></div>
+          </div>
+          <div class="row-1">
+              <div class="col1">
+                <h3>Filters</h3>
+                
+                <div class="filter">
+                  <label for="conditions">Location</label><br>
+                  <input type="radio" id="conditions" value="paro"> Paro <br>
+                  <input type="radio" id="conditions" value="thimphu"> Thimphu<br>
+                  <input type="radio" id="conditions" value="thimphu"> Punakha<br>
+                </div>
+
+                <div class="filter">
+                    <label>Average star rating</label> <br>
+                    <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Outstanding"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Very Good"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good"></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor"></label>
+                    </fieldset>
+                </div>
+            
+                <div class="filter">
+                  <label for="price">Price</label><br>
+                  <input type="radio" id="price" value="under1000"> Under Rs.1000<br>
+                  <input type="radio" id="price" value="under2000"> Under Rs.2000<br>
+                  <input type="radio" id="price" value="under5000"> Under Rs.5000<br>
+                  <input type="radio" id="price" value="under10000"> Under Rs.10000<br>
+                  <input type="radio" id="price" value="more10000"> More Rs.10000<br>
+                </div>
+              </div>
+
+              <div class="col2">
+                <div class="row">
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/Bhu2.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.3500/night</span></p>
+                      <div class="view">
+                        <p class="city">Tiget Nest, Bhutan</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+        
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/Nep4.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.3500/night</span></p>
+                      <div class="view">
+                        <p class="city">Kathmandu, Nepal</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+        
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/Bhu5.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.3500/night</span></p>
+                      <div class="view">
+                        <p class="city">Punakha, Bhutan</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+        
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/Nep8.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.3500/night</span></p>
+                      <div class="view">
+                        <p class="city">Pokhara, Nepal</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+        
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/le meridian.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.3500/night</span></p>
+                      <div class="view">
+                        <p class="city">Le meridian, Bhutan</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+        
+                    <div class="col">
+                      <a href="">
+                        <img src="/images/moun1.jpg" alt="">
+                      </a>
+                      <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>    
+                      </div>
+                      <p class="item-price"><span>Rs.00/night</span></p>
+                      <div class="view">
+                        <p class="city">Annapurna, Nepal</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+        </section>
+          
+
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+          <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-4 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">B&N Hotels</h5>
+                <p>Book your holidays to the Himalayas. A wonderful scenery, innumberable adventures
+                  and perfect accommodation during your stay. We at B&N Hotels offer amazing services
+                  at a very reasonable price and we there are to make your trip a memorable one. Enjoy 
+                  your stay!
+                </p>
+              </div>
+    
+              <hr class="clearfix w-100 d-md-none">
+              <div class="col-md-2 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Useful Links</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="about.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#!">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="condition.html">Terms of Use</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+    
+          <hr>
+          <div class="footer-sec">
+            <h4 class="social-content">Connect With Us</h4>
+            <p class="col-md-12 social">
+              <a href="#"><span class="fa fa-facebook"></span></a>
+              <a href="#"><span class="fa fa-twitter"></span></a>
+              <a href="#"><span class="fa fa-instagram"></span></a>
+              <a href="#"><span class="fa fa-linkedin"></span></a>
+              <a href="#"><span class="fa fa-youtube"></span></a>
+            </p>
+          </div>
+          
+    
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">  
+            <span class="copyright">&COPY;Copyright 2020 AP Programming. All rights reserved</span>
+          </div>
+        </footer>
+
+    </body>
+
+   
+
+    <!-- Footer -->
+    
+    
+</html>

@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import  RichTextUploadingField
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 
@@ -27,6 +28,8 @@ class Hotel(models.Model):
     )
     country     = models.ForeignKey(Category, on_delete= models.CASCADE)
     location    = models.CharField(max_length=120, choices=AREA)
+    location_overview   = models.CharField(max_length=250, default = 'Set against the Himalayas, this polished, palatial hotel built to resemble a 17th-century fortress overlooks the Paro River and is 4 km from the airport, and 7 km from Rinpung Dzong, a famed Buddhist monastery/fortress.')
+    amenities   = RichTextUploadingField(default= 'hkajsdfh')
     title       = models.CharField(max_length=120)
     description = RichTextUploadingField(null=True)
     image       = models.URLField(default='')
