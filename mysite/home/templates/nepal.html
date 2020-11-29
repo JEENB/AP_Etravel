@@ -9,6 +9,13 @@
       <div class="after"></div>
     </div>
     <div class="row-1">
+      <select class="sort">
+        <option><a href="/sort/">Default Sorting</a></option>
+        <option>Price</option>
+        <option>Popularity</option>
+        <option>Rating</option>
+      </select>
+    <div class="row-1">
         <div class="col1">
           <h3>Filters</h3>
           
@@ -68,6 +75,17 @@
 
   </section>
 
+  <div class="pagination">  
+    {% if hotels.has_previous %}
+        <a href="?page=1"><<</a>
+        <a href="?page={{ hotels.previous_page_number }}"> < <Last></a>
+    {% endif %}
+          <strong>{{ hotels.number }}</strong>
+    {% if hotels.has_next %}
+        <a href="?page={{ hotels.next_page_number }}">></a>
+        <a href="?page={{ hotels.paginator.num_page }}"> >></a>
+    {% endif %}
+  </div>
 
 {% endblock %}
 {% block footer %} {% include 'footer.html' %}{% endblock %}

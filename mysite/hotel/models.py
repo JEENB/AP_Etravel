@@ -96,3 +96,22 @@ class ReviewForm(ModelForm):
     class Meta:
         model = Review
         fields = ['comment', 'rate']
+
+
+
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
+    hotel = models.ForeignKey(Hotel, on_delete=models.SET_NULL, null=True)
+    guest = models.IntegerField()
+    check_in = models.DateField()
+    check_out = models.DateField()
+
+    @property
+    def amount(self):
+        return(self.hotel.price*self.guest)
+    
+
+class BookingForm(ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['guest', 'check_in', 'check_out']

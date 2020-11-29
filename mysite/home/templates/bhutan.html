@@ -69,5 +69,17 @@
 
   </section>
 
+  <div class="pagination">  
+    {% if hotels.has_previous %}
+        <a href="?page=1"><<</a>
+        <a href="?page={{ hotels.previous_page_number }}"> <Last></a>
+    {% endif %}
+
+    {% if hotels.has_next %}
+    <a href="?page={{ hotels.next_page_number }}">></a>
+    <a href="?page={{ hotels.paginator.num_page }}"> >></a>
+{% endif %}
+  </div>
+
 {% endblock %}
 {% block footer %} {% include 'footer.html' %}{% endblock %}

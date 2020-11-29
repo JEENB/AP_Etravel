@@ -1163,7 +1163,7 @@ background-color: #415c97;
 	margin-top: 10px;
 	text-align: center;
 	width: 50%;
-	background-color: #0f5EEE;
+	background-color: #415c97;
 	border: none
 }
 #details .btn:hover {
@@ -1213,7 +1213,7 @@ background-color: #415c97;
 	width: 25%;
 }
 #details .btn:hover {
-	background: #0f5EEE;
+	background: #415c97;
 	
 }
 
@@ -1249,7 +1249,7 @@ background-color: #415c97;
 	margin-top: 4px;
 }
 #details .after {
-	border: 2px solid #0f5EEE;
+	border: 2px solid #415c97;
 	border-radius: 75px;
 	width: 60%;
 	margin-left: 20%;
@@ -1303,7 +1303,7 @@ background-color: #415c97;
 	background-color: #e37a23;
 }
 .tab button.active {
-	background-color: #0f5EEE;
+	background-color: #415c97;
 	color: white;
 }
 
@@ -1323,7 +1323,7 @@ background-color: #415c97;
 }
 
 #reviews .btn:hover {
-	background-color: #0f5EEE;
+	background-color: #415c97;
 	
 }
 

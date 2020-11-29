@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from hotel.models import Hotel, Category, Images, Review
 from .forms import Search
 import json
+from django.core.paginator import Paginator
 # Create your views here.
 
 def home_page_view(request):
@@ -17,8 +18,9 @@ def search_page_view(request):
     if request.method == "POST":
         form = Search(request.POST)
         if form.is_valid():
-            query          = form.cleaned_data['query']
-            search_hotel = Hotel.objects.filter(title__icontains=query)
+            query           = form.cleaned_data['query']
+            search_hotel    = Hotel.objects.filter(title__icontains=query)
+            
             context={
                 'search_hotel': search_hotel,
                 'query': query
@@ -73,13 +75,19 @@ def hotel_detail_view(request, id, slug):
     return render(request, 'hotel_detail.html', context)
 
 def destination_nepal(request):
-    hotels = Hotel.objects.filter(country=2).order_by('?')[:]
+    hotels = Hotel.objects.filter(country=2)[:]
+    paginator       = Paginator(hotels,1)
+    page            = request.GET.get('page')
+    hotels          = paginator.get_page(page)
     context = {
         'hotels': hotels
     }
     return render(request,'nepal.html',context)
 
 def destination_bhutan(request):
-    hotels = Hotel.objects.filter(country=1).order_by('?')[:]
+    hotels = Hotel.objects.filter(country=1)[:]
+    paginator       = Paginator(hotels,1)
+    page            = request.GET.get('page')
+    hotels          = paginator.get_page(page)
     context = {'hotels': hotels}
     return render(request,'bhutan.html',context)
