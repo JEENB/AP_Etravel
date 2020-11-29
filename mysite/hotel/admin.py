@@ -30,6 +30,6 @@ admin.site.register(Category, AdminCategory)
 admin.site.register(Hotel, AdminHotel)
 admin.site.register(Images)
 admin.site.register(BookingInfo, AdminBookingInfo)
-
+admin.site.register(Booking)
 admin.site.register(Review, AdminReview)
 

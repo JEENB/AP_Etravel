@@ -3,66 +3,53 @@
 
 {% block body %}
 <section>
-    <div class="about-section">
+    <div class="about-section1">
         <div class="inner-container">
-            <h1>About  B&N Hotels</h1>
-            <p class="text">
-              B&N Hotels offers ultimate comfort and luxury in two differen
-              countries. The hotels are beautiful combination of 
-              traditional grandeur and modern facilities. The 255 exclusive guest rooms 
-              are furnished with a range of modern amenities such as 
-              television and internet access.
-            </p>
+            <h1>Our Office</h1>
+        <div class= "office">
+
+            <hr>
+
+            <h4 ><strong>Address:</strong> </h4>
+
+            <p >Kijowska 7/U5</p>
+            <p >Warsaw, 03-738</p>
+            <p >Poland</p>
+
+            <hr>
+
+
+
+            <h4 ><strong>Contact:</strong></h4>
+
+            <p ><strong>Email:</strong>noxx@info.com</p>
+            <p ><strong>Phone:</strong>2343425</p>
+            <p ><strong>Customer Service:</strong>1600-56978976</p>
+
+            <hr>
+
+            <h4 ><strong>Company tax ID:</strong></h4>
+
+            <p >US2542911940</p>
         </div>
     </div>
 </section>
-<section class="team-section">
+<section class="team-section1">
     <div class="inner-container">
-        <h1>Our Team</h1>
-        <div class="team">
-            <div class="team-member">
-                <div class="team-img">
-                    <img src="/images/download.png" alt="team_member_image">
-                </div>
-                <h3>Ashin Dai</h3>
-                <p class="role">Manager</p>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Adipisci aliquid numquam eius ut nemo vitae in assumenda 
-                    consequatur aliquam iure labore, hic, porro atque mollitia 
-                    inventore officiis minus libero id.
-                </p>
-            </div>
+        <h3 style="text-align: center;">Contact Us</h3>
 
+        <form class="singup-form" method= "POST">
+            {% csrf_token %}
+            <fieldset>
+              {{ form.as_p }}
+          </fieldset>
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Submit Review</button>
+          </div>
+          </form>
+        
 
-            <div class="team-member">
-                <div class="team-img">
-                    <img src="/images/download.png" alt="team_member_image">
-                </div>
-                <h3>Jenish</h3>
-                <p class="role">Back-End Developer </p>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Adipisci aliquid numquam eius ut nemo vitae in assumenda 
-                    consequatur aliquam iure labore, hic, porro atque mollitia 
-                    inventore officiis minus libero id.
-                </p>
-            </div>
-
-            <div class="team-member">
-                <div class="team-img">
-                    <img src="/images/download.png" alt="team_member_image">
-                </div>
-                <h3>Nidup Dorji</h3>
-                <p class="role">Front-End Developer</p>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Adipisci aliquid numquam eius ut nemo vitae in assumenda 
-                    consequatur aliquam iure labore, hic, porro atque mollitia 
-                    inventore officiis minus libero id.
-                </p>
-            </div>
-        </div>
+    </div>
         
     </div>
 </section>

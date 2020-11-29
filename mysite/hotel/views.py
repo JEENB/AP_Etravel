@@ -4,7 +4,7 @@ from django.contrib import messages
 from hotel.models import Review, ReviewForm, Booking, BookingForm, BookingInfo, BookingInfoForm
 from user.models import Profile
 from django.utils.crypto import get_random_string
-
+from hotel.models import Hotel
 # Create your views here.
 
 
@@ -57,7 +57,6 @@ def billing(request):
     booking         = Booking.objects.get(user_id = current_user.id)
     profile         = Profile.objects.get(user_id = current_user.id)
 
-
     if request.method == 'POST':
         billing_form = BookingInfoForm(request.POST)
         if billing_form.is_valid():
@@ -69,7 +68,6 @@ def billing(request):
             billing_info.address       = billing_form.cleaned_data['address']
             billing_info.guest         = billing_form.cleaned_data['guest']
             billing_info.guest_name    = billing_form.cleaned_data['guest_name']
-            billing_info.hotel         = billing_form.cleaned_data['hotel']
             billing_info.check_in      = billing_form.cleaned_data['check_in']
             billing_info.check_out     = billing_form.cleaned_data['check_out']
             billing_info.total         = billing_form.cleaned_data['total']
@@ -79,6 +77,8 @@ def billing(request):
             billing_info.expyear       = billing_form.cleaned_data['expyear']
             billing_info.cvv           = billing_form.cleaned_data['cvv']
             billing_info.user_id       = current_user.id
+            billing_info.hotel         = billing_form.cleaned_data['hotel']
+
             code                       = get_random_string(length=14)
             billing_info.bookingcode     = code 
             billing_info.save()

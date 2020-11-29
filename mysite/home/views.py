@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from hotel.models import Hotel, Category, Images, Review
 from .forms import Search
 import json
 from django.core.paginator import Paginator
+from complaints.models import Complaint, ComplaintForm
+from django.contrib import messages
+
 # Create your views here.
 
 def home_page_view(request):
@@ -52,7 +55,19 @@ def about_page_view(request):
 
 
 def contact_page_view(request):
-    context ={}
+    if request.method =='POST':
+        form = ComplaintForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Thank you for contacting us!')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            messages.error(request,'Error! Please check your credentials')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))   
+
+    form = ComplaintForm()         
+            
+    context ={'form': form} 
     return render(request, 'contact.html', context)
 
 

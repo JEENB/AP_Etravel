@@ -121,7 +121,7 @@ class BookingInfo(models.Model):
     user        = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
     first_name  = models.CharField(max_length= 250, null= True)
     last_name   = models.CharField(max_length= 250, null= True)
-    hotel       = models.CharField(max_length=100, null=True, blank=True)
+    hotel       = models.CharField(max_length = 250, null= True)
     guest       = models.IntegerField()
     guest_name  = models.CharField(max_length = 200, null=True, blank=True)
     contact     = models.DecimalField(max_digits=10, decimal_places=0, null = True)
