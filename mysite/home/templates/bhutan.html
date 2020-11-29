@@ -56,10 +56,10 @@
                     </div>
                     <p class="item-price" style="text-transform: uppercase;"><span>{{ hotel.title }}</span></p>
                     <p class="item-price"><span>Rs.{{ hotel.price }}/night</span></p>
+                    <p class="city">{{hotel.location}}</p>
                     <div class="view">
-                      <p class="city">{{hotel.location}}</p>
-                      <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-secondary">View Details</a>
-                    </div>
+                      <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-primary">View Details</a>
+                      <a href="/wishlist/wishlistcart/{{ hotel.id }}/" class="btn btn-secondary">Add to Wishlist</a>                    </div>
                   </div>
                 {% endfor %}
                 </div>

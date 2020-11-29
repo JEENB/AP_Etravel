@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'hotel',
     'user',
     'complaints',
+    'destination',
 ]
 
 MIDDLEWARE = [

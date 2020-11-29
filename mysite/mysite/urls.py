@@ -20,7 +20,7 @@ from user import urls
 from hotel import urls
 from user import views as userviews
 from hotel import views as hotelviews
-
+from destination import views as wishlistviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),
@@ -33,5 +33,7 @@ urlpatterns = [
     path('hotel/', include('hotel.urls')),
     path('billing/', hotelviews.billing, name='billing'),
     path('accounts/', include('allauth.urls')),
+    path('wishlist/', include('destination.urls')),
+    path('wishlist/', wishlistviews.wishlist, name= 'wishlist'),
 
 ]

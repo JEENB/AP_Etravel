@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Destination {% endblock %}
+{% block body %}
+
+  <h2 style="text-align: center;">My Destination List</h2>
+  <section id="cart-page">
+      <div class="row-11">
+        <div class="container-1">
+          <table>
+            <tr>
+                <th>Hotel</th>
+                <th>Price</th>
+            </tr>
+            {% for smart in wishlists %}
+              <tr>
+                <td>
+                  <div class="cart-info">
+                    <img src="{{ smart.hotel.image }}">
+                    <div>
+                      <a class="nav-link" href="/hotel/{{ smart.hotel.id }}/{{ smart.hotel.slug }}"><h5>{{ smart.hotel.title }} {{ smart.hotel.averagerev |stringformat:".1f" }}/5    
+                      </h5></a>
+                      <p>{{smart.hotel.location}}, {{smart.hotel.country}}</p>
+                    <a href="/wishlist/wishlistremove/{{ smart.id }}" onclick="return confirm('{{ smart.hotel.title }} will be removed from your wishlist!')">Remove from wishlist</a>
+                    </div>
+                  </div>
+                </td>
+                <td>{{ smart.hotel.price }}</td>
+              </tr>
+            {% endfor %}                  
+    
+  </section>  
+{% endblock %} 
+
+
+

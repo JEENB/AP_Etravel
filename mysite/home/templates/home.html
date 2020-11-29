@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-
+{% load static %}
     <body>
         <section id="main-content">
           <h1>B&N Hotels</h1>
@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col">
               <a href="">
-                <img src="/images/Bhu2.jpg" alt="">
+                <img src="{% static ''%}images/Bhu2.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Tiget Nest, Bhutan</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="col">
               <a href="">
-                <img src="/images/Nep4.jpg" alt="">
+                <img src="{% static ''%}images/Nep4.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Kathmandu, Nepal</p>
@@ -66,7 +66,7 @@
             </div>
             <div class="col">
               <a href="">
-                <img src="/images/Bhu5.jpg" alt="">
+                <img src="{% static ''%}images/Bhu5.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Punakha, Bhutan</p>
@@ -75,7 +75,7 @@
             </div>
             <div class="col">
               <a href="">
-                <img src="/images/Nep8.jpg" alt="">
+                <img src="{% static ''%}images/Nep8.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Pokhara, Nepal</p>
@@ -84,7 +84,7 @@
             </div>
             <div class="col">
               <a href="">
-                <img src="/images/le meridian.jpg" alt="">
+                <img src="{% static ''%}images/le meridian.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Paro, Bhutan</p>
@@ -93,7 +93,7 @@
             </div>
             <div class="col">
               <a href="">
-                <img src="/images/moun1.jpg" alt="">
+                <img src="{% static ''%}images/moun1.jpg" alt="">
               </a>
               <div class="view">
                 <p class="city">Annapurna, Nepal</p>
@@ -127,7 +127,9 @@
                   <i class="fa fa-star{% if hotel.averagerev < 4 %}-o empty{% endif %}"></i>
                   <i class="fa fa-star{% if hotel.averagerev < 5 %}-o empty{% endif %}"></i>   
                 </div>
-                <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-secondary">View Details</a>
+                <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-primary">View Details</a>
+                <a href="/wishlist/wishlistcart/{{ hotel.id }}/" class="btn btn-secondary">Add to Wishlist</a>
+
               </div>
             </div>
           {% endfor %}

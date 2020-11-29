@@ -187,7 +187,7 @@
 	font-weight: 900;
 }
 #main-content .btn:hover {
-	background: #0f5EEE;
+	background: #415c97;
 	
 }
 
@@ -363,7 +363,7 @@
 
 /* ========== About Section ========= */
 .about-section {
-	background: url(/static/images/evers.jpg);
+	background: url(/static/images/Nep4.jpg);
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;;
@@ -1369,11 +1369,11 @@ background-color: #415c97;
 
 /* about section 1 is for contact us */
 .about-section1 {
-	background: url(/static/images/evers.jpg);
+	background: url(/static/images/Bhu1.jpg);
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;;
-	overflow: hidden;
+	overflow: visible;
 	padding: 50px ;
 	padding-right: auto;
 	background-color:rgb(255, 255, 255);
@@ -1421,4 +1421,99 @@ background-color: #415c97;
 	.about-section1 .inner-container .text {
 		text-align: justify;
 	}
+}
+
+#cart-page {
+	margin: 80px auto;
+}
+#cart-page .row-11 {
+	border-collapse: collapse; 
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#cart-page table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding: auto 20px;
+
+}
+ #cart-page .cart-info {
+	 display: flex;
+	 flex-wrap: wrap;
+ }
+ #cart-page th {
+	 text-align: left;
+	 padding: 5px;
+	 margin-left: 50px;
+	 color: #fff;
+	 background-color:#e37a23;
+	 height: 40px;
+ }
+
+ #cart-page td {
+	 padding: 10px 5px;
+ }
+ 
+ #cart-page td input {
+	 width: 40px;
+	 height: 30px;
+	 padding: 5px;
+	 border-radius: 7px;
+ }
+
+ #cart-page td a {
+	 color: #e37a23;
+	 font-size: 12px;
+
+ }
+
+ #cart-page td img {
+	 width: 80px;
+	 height: 80px;
+	 margin-right: 10px;
+ }
+
+ .total-price {
+	 display: flex;
+	 justify-content: flex-end;
+ }
+
+ .total-price table {
+	 border-top: 3px solid #ff523b;
+	 margin-left: 80%;
+	 max-width: 100%;
+ }
+
+ td:last-child {
+	 text-align: right;
+ }
+ th:last-child {
+	text-align: right;
+}
+
+#cart-page .total-price td {
+	padding: 1px;
+}
+
+#cart-page .btn {
+	background-color:#e37a23;
+	color: white;
+	padding: 12px;
+	margin: 10px 0;
+	border: none;
+	width: 50%;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 17px;
+}
+#cart-page .btn {
+	margin-left: 40%;
+}
+	
+	
+#cart-page .btn:hover {
+	background-color: red;
 }
