@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hotel, Category, Images, Review, Booking
+from .models import Hotel, Category, Images, Review, Booking, BookingInfo
 # Register your models here.
 class AdminCategory(admin.ModelAdmin):
     list_display        = ['country']
@@ -20,15 +20,16 @@ class AdminReview(admin.ModelAdmin):
     list_filter         = ['hotel', 'user']
 
 
-class AdminBooking(admin.ModelAdmin):
-    list_display        = ['user', 'hotel', 'guest', 'check_in', 'check_out', 'amount']
+class AdminBookingInfo(admin.ModelAdmin):
+    list_display        = ['user', 'hotel', 'guest', 'check_in', 'check_out', 'total']
     list_filter         = ['hotel', 'user', 'check_in']
-    readonly_fields     = ('user', 'hotel', 'guest', 'check_in', 'check_out')
+    readonly_fields     = ('user', 'hotel', 'first_name', 'last_name', 'contact', 'address', 'email', 'guest','guest_name',  'check_in', 'check_out', 'total', 'cname', 'ccnum','expmonth','expyear','cvv', 'bookingcode')
 
 
 admin.site.register(Category, AdminCategory)
 admin.site.register(Hotel, AdminHotel)
 admin.site.register(Images)
+admin.site.register(BookingInfo, AdminBookingInfo)
+
 admin.site.register(Review, AdminReview)
-admin.site.register(Booking, AdminBooking)
 

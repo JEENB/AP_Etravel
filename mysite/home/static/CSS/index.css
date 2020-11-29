@@ -831,7 +831,7 @@ flex: 75%;
 	border-radius: 12px;
 }
 
-#billing-page  input[type=text], input[type=password] {
+#billing-page  input[type=text], input[type=number], input[type=date], input[type=email]{
 	width: 100%;
 	margin-bottom: 10px;
 	padding: 12px;
@@ -1345,4 +1345,24 @@ background-color: #415c97;
 	padding: 7px; 
 	border-radius: 5px;
 	font-size: 12px;
+}
+
+
+#notification {
+	padding: 50px;
+}
+#notification .container{
+	border-radius: 5px;
+	margin-bottom: 0px;
+	background-color: rgb(223, 238, 223);
+	max-width: 400px;
+	max-height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px;
+}
+#notification .noti-item {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
 }

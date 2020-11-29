@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Order Complete {% endblock %}
+{% block body %}
+{% load static %}
+
+<section id="notification">
+    <div class="container">
+        <p class="noti-item">Dear {{ user.first_name }},</p>
+        <p class="noti-item">Your booking has been completed.</p>
+        <p class="noti-item">Order Code: {{ code }} (please keep this for future reference)</p>
+        <p class="noti-item">Thank you for shopping with us.</p>  
+        <p class="noti-item"><a href="/contact/">Contact us</a> if you face any issues.</p>          
+    </div>
+
+</section>
+
+
+{% endblock %} 
+
+{% block footer %} {% include 'footer.html' %}{% endblock %}

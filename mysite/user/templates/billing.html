@@ -13,7 +13,7 @@
                     {% csrf_token %}
                   <div class="row">
                     <div class="col-50">
-                      <h3>Billing Address</h3>
+                      <h3>Billing </h3>
                       <div class="row"> 
                             
                             <div class="col-50">
@@ -26,29 +26,29 @@
                             </div>
                             </div>
                             <label for="email"> Email</label>
-                            <input type="email" id="email" name="email" placeholder="nidup1938@example.com" value="{{ user.email }}">
+                            <input type="email" id="email" name="email" placeholder="Email" value="{{ user.email }}">
                             <label for="city"> Contact</label>
                             <input type="text" id="city" name="contact" placeholder="Contact" value="{{ profile.contact }}">
                             <label for="adr">Address</label>
-                            <input type="text" id="adr" name="address" placeholder="Rai Sonipat" value="{{ profile.address }}">
+                            <input type="text" id="adr" name="address" placeholder="Address" value="{{ profile.address }}">
                             <div class="row">
                                 <div class="col-50">
-                                <label for="state">City</label>
-                                <input type="text" id="state" name="city" placeholder="City" value="{{ profile.city }}">
+                                <label for="state">Guest</label>
+                                <input type="number" id="state" name="guest" placeholder="Guest" value="{{ booking.guest }}">
                                 </div>
                                 <div class="col-50">
-                                <label for="zip">Landmark</label>
-                                <input type="text" id="zip" name="landmark" placeholder="Landmark" value="{{ profile.landmark }}">
+                                <label for="zip">Guest Name</label>
+                                <input type="text" id="zip" name="guest_name" placeholder="Guest Name seperated with comma" >
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-50">
-                                <label for="state">State</label>
-                                <input type="text" id="state" name="state" placeholder="Haryana" value="{{ profile.state }}">
+                                <label for="state">Check In</label>
+                                <input type="text" id="state" name="check_in"  value="{{ booking.check_in }}">
                                 </div>
                                 <div class="col-50">
-                                <label for="zip">Pincode</label>
-                                <input type="text" id="zip" name="pincode" placeholder="131029" value="{{ profile.pincode }}">
+                                <label for="zip">Check Out</label>
+                                <input type="text" id="zip" name="check_out"  value="{{ booking.check_out }}">
                                 </div>
                             </div>  
                         
@@ -64,22 +64,31 @@
                         <i class="fa fa-cc-mastercard" style="color: red;"></i>
                         <i class="fa fa-cc-paypal" style="color:blue;"></i>
                       </div>
-                      <label for="cname">Net Total</label>
-                      <input type="number" id="total" name="total" value="{{ net }}" readonly>
+                      <div class="row">
+                        <div class="col-50">
+                        <label for="state">Hotel</label>
+                        <input type="text" id="state" name="hotel" placeholder="Hotel" value="{{ booking.hotel.title }}">
+                        </div>
+                        <div class="col-50">
+                        <label for="zip">Total</label>
+                        <input type="number" id="zip" name="total" placeholder="totoal" value="{{ booking.amount }}">
+                        </div>
+                    </div>
+                    
                       <label for="cname">Name on Card</label>
                       <input type="text" id="cname" name="cname" placeholder="Name">
                       <label for="ccnum">Card number</label>
-                      <input type="text" id="ccnum" name="ccnum" placeholder="0000-0000-0000-0000">
+                      <input type="number" id="ccnum" name="ccnum" placeholder="0000-0000-0000-0000">
                       <label for="expmonth">Exp Month</label>
                       <input type="text" id="expmonth" name="expmonth" placeholder="September">
                       <div class="row">
                         <div class="col-50">
                           <label for="expyear">Exp Year</label>
-                          <input type="text" id="expyear" name="expyear" placeholder="2020">
+                          <input type="number" id="expyear" name="expyear" placeholder="2020">
                         </div>
                         <div class="col-50">
                           <label for="cvv">CVV</label>
-                          <input type="text" id="cvv" name="cvv" placeholder="123">
+                          <input type="number" id="cvv" name="cvv" placeholder="123">
                         </div>
                       </div>
                     </div>

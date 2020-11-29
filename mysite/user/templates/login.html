@@ -31,6 +31,10 @@
 
 </form>
 
+{% load socialaccount %}
+{% providers_media_js %}
+
+<a href="{% provider_login_url "google" %}"> Google Connect</a>
 
     
 {% endblock %} 

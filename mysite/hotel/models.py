@@ -109,9 +109,39 @@ class Booking(models.Model):
     @property
     def amount(self):
         return(self.hotel.price*self.guest)
-    
+
 
 class BookingForm(ModelForm):
     class Meta:
         model = Booking
         fields = ['guest', 'check_in', 'check_out']
+
+
+class BookingInfo(models.Model):
+    user        = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
+    first_name  = models.CharField(max_length= 250, null= True)
+    last_name   = models.CharField(max_length= 250, null= True)
+    hotel       = models.CharField(max_length=100, null=True, blank=True)
+    guest       = models.IntegerField()
+    guest_name  = models.CharField(max_length = 200, null=True, blank=True)
+    contact     = models.DecimalField(max_digits=10, decimal_places=0, null = True)
+    address     = models.CharField(max_length=150,null = True)
+    email       = models.EmailField(max_length= 250, null= True)
+    created     = models.DateTimeField(auto_now_add=True)
+    check_in    = models.CharField(max_length=50)
+    check_out   = models.CharField(max_length=50)
+    bookingcode = models.CharField(max_length= 14)
+    note        = models.CharField(max_length= 1000, null= True, blank= True)
+    total       = models.FloatField(null = True)
+    cname       = models.CharField(max_length=50, null= True, blank= False)
+    ccnum       = models.CharField(max_length=16, null= True, blank= False)
+    expmonth    = models.CharField(max_length=50, null= True, blank= False)  
+    expyear     = models.CharField(max_length=50, null= True, blank= False)
+    cvv         = models.CharField(max_length=3, null= True, blank= False)
+    def __str__(self):
+        return self.user.first_name
+
+class BookingInfoForm(ModelForm):
+    class Meta:
+        model = BookingInfo
+        fields = ['first_name', 'last_name', 'email', 'contact','guest','address', 'check_in', 'check_out', 'guest_name', 'total', 'cname', 'ccnum', 'expmonth', 'expyear', 'cvv', 'hotel' ]

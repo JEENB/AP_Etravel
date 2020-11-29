@@ -19,7 +19,7 @@ from home import urls
 from user import urls
 from hotel import urls
 from user import views as userviews
-
+from hotel import views as hotelviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +31,7 @@ urlpatterns = [
     path('signup/', userviews.signupform, name= 'signupform'),
     path('user/', include('user.urls')),
     path('hotel/', include('hotel.urls')),
-
+    path('billing/', hotelviews.billing, name='billing'),
+    path('accounts/', include('allauth.urls')),
 
 ]
