@@ -21,7 +21,7 @@ Jenish Raj Bajracharya \
 Nidup Dorji 
 
 ## GitHub:
-https://github.com/JEENB/AP_Ecommerce/
+https://github.com/JEENB/AP_Etravel
 
 ## Reference:
 1. https://www.youtube.com/playlist?list=PLIUezwWmVtFXaHcJ63ZM6uOJdhMrnZFFk 
