@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'user',
     'complaints',
     'destination',
+    'location'
 ]
 
 MIDDLEWARE = [

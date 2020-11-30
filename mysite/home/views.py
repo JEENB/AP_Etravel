@@ -6,13 +6,15 @@ import json
 from django.core.paginator import Paginator
 from complaints.models import Complaint, ComplaintForm
 from django.contrib import messages
-
+from location.models import Locations
 # Create your views here.
 
 def home_page_view(request):
     hotels = Hotel.objects.all().order_by('?')[:8]
+    loc = Locations.objects.all().order_by('?')[:8]
     context ={
-        'hotels': hotels
+        'hotels': hotels,
+        'loc':  loc
     }
     return render(request, 'home.html', context)
 

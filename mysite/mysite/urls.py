@@ -21,6 +21,7 @@ from hotel import urls
 from user import views as userviews
 from hotel import views as hotelviews
 from destination import views as wishlistviews
+from location import views as locationviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),
@@ -35,5 +36,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('wishlist/', include('destination.urls')),
     path('wishlist/', wishlistviews.wishlist, name= 'wishlist'),
+    path('location/<int:id>', locationviews.location, name= 'location'),
+
 
 ]
