@@ -8,7 +8,9 @@ def location(request, id):
     # more_like   = Hotel.objects.all().order_by('?')[:4]
     context     = {
         'loc'   : loc,
-        # 'more_like' : more_like,
         'img'       : img,
     }
     return render(request, 'locations.html', context)
+
+
+
