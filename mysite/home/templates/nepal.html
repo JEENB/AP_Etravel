@@ -18,33 +18,12 @@
     <div class="row-1">
         <div class="col1">
           <h3>Filters</h3>
-          
-          <div class="filter">
-            <label for="conditions">Location</label><br>
-            <input type="radio" id="conditions" value="paro"> Paro <br>
-            <input type="radio" id="conditions" value="thimphu"> Thimphu<br>
-            <input type="radio" id="conditions" value="thimphu"> Punakha<br>
-          </div>
+          <form class="singup-form"  method="GET">
+            {{ filter.form.as_p }}
+            <input type="submit" value=" Filter">
 
-          <div class="filter">
-              <label>Average star rating</label> <br>
-              <fieldset class="rating">
-                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Outstanding"></label>
-                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Very Good"></label>
-                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good"></label>
-                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor"></label>
-                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor"></label>
-              </fieldset>
-          </div>
-      
-          <div class="filter">
-            <label for="price">Price</label><br>
-            <input type="radio" id="price" value="under1000"> Under Rs.1000<br>
-            <input type="radio" id="price" value="under2000"> Under Rs.2000<br>
-            <input type="radio" id="price" value="under5000"> Under Rs.5000<br>
-            <input type="radio" id="price" value="under10000"> Under Rs.10000<br>
-            <input type="radio" id="price" value="more10000"> More Rs.10000<br>
-          </div>
+          </form>
+         
         </div>
 
         <div class="col2">
@@ -71,6 +50,8 @@
               </div>
             {% endfor %}
             </div>
+
+            
         </div>
     </div>
 

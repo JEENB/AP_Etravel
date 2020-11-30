@@ -69,72 +69,16 @@
         <button class="tablinks" onclick="openItem(event, 'Reviews')">Reviews ({{ hotel.countrev }})</button>
       </div>
       <div id="Description" class="tabcontent">
-        <h5>Hotel Description</h5>
-          <div class="star-rating">
-            <i class="fa fa-star{% if hotel.averagerev < 1 %}-o empty{% endif %}"></i>
-            <i class="fa fa-star{% if hotel.averagerev < 2 %}-o empty{% endif %}"></i>
-            <i class="fa fa-star{% if hotel.averagerev < 3 %}-o empty{% endif %}"></i>
-            <i class="fa fa-star{% if hotel.averagerev < 4 %}-o empty{% endif %}"></i>
-            <i class="fa fa-star{% if hotel.averagerev < 5 %}-o empty{% endif %}"></i>   
-          </div>
-          <h6>Rs {{ hotel.price }}/night</h6>
+        <h3 style="text-align: center;">Hotel Description</h5>
+          
           <p>{{ hotel.description|safe }}
           </p>
         
       </div>
       
       <div id="Information" class="tabcontent">
-        <h5>Amenities</h5>
-        <table class="table table-striped table-bordered mt-3">
-            
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">AC</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">TV</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </tbody>
-
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">Free Wifi</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </thead>
-
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">Kitchen</th>
-              <td><em>No</em></td>
-            </tr>
-          </thead>
-
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">Geyser</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </thead>
-
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">Powerbackup</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </thead>
-
-          <thead>
-            <tr>
-              <th scope="row" class="w-150 dark-grey-text h6">Parking Facilities</th>
-              <td><em>Yes</em></td>
-            </tr>
-          </thead>
-        </table>
+      
+        {{ hotel.amenities|safe }}
       </div>
       
       <div id="Reviews" class="tabcontent">
@@ -243,7 +187,8 @@
      
       <div class="view">
         <div><h4 class="title">{{ hotel.title }}</h4></div>
-        <div><p class="price">Rs. {{ hotel.price }} /night</p>
+        <div>
+          <p class="price">Rs. {{ hotel.price }} /night</p>
         <p class="city">{{ hotel.location }}, {{ hotel.country }}</p></div>
         <div class="star-rating">
           <i class="fa fa-star{% if hotel.averagerev < 1 %}-o empty{% endif %}"></i>

@@ -3,6 +3,8 @@
 {% block body %}
 {% load static %}
 
+{% load socialaccount %}
+{% providers_media_js %}
 <!-- {% if messages %}
         {% for message in messages %}
         <div class="message">
@@ -10,6 +12,8 @@
         </div>
         {% endfor %}
     {% endif %} -->
+
+
 
 <form class="singup-form" action="" method="POST"> 
     {% csrf_token %} 
@@ -24,17 +28,45 @@
 
     
     <button type="submit" class="btn btn-primary btn-lg" value="Login">Login</button>
-    <div class="container" style="background-color:#f1f1f1;">
-        <span class="psw"><a href="/signup/"> Create an account</a></span>
-
+    <div class="google-container">
+        <a class="google" href="{% provider_login_url "google" %}"> Sign in with Google Account</a>
+        <div class="create-1">
+            <span class="psw"><a href="/signup/"> Create an account</a></span>
+        </div>
     </div>
 
 </form>
 
-{% load socialaccount %}
-{% providers_media_js %}
 
-<a href="{% provider_login_url "google" %}"> Google Connect</a>
+
+<style>
+    .google-container {
+        display: inline-block;
+        width: 100%;
+        padding: 5px auto;
+    }
+    .create-1 {
+        display: inline-block;
+        float: right;
+        font-size: 15px;
+        font-family: "Roboto", sans-serif;
+        padding: 5px;
+        border-radius: 3px;
+        
+    }
+    .google {
+        display: inline-block;
+        font-size: 15px;
+        font-family: "Roboto", sans-serif;
+        padding: 5px;
+        border-radius: 3px;
+        
+    }
+
+    .create-1:hover{
+        color: black;
+    }
+</style>
 
     
 {% endblock %} 

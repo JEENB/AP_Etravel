@@ -3,17 +3,16 @@
 {% block body %}
 {% load static %}
 
-<section class="destinations">
+<section class="search">
     <div class="topic">
       <h2 class="title">Your Search Result</h2>
-      <div class="after"></div>
     </div>
     
     <div class="row">
         {% if search_hotel  %}
             {% for hotel in search_hotel %}
             <div class="col">
-                <a href="">
+                <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}">
                 <img src="{{ hotel.image }}" alt="">
                 </a>
             
@@ -29,7 +28,7 @@
                     <i class="fa fa-star-o"></i>    
                 </div>
                 <a href="/hotel/{{ hotel.id }}/{{ hotel.slug }}" class="btn btn-primary">View Details</a>
-                <a href="/wishlist/wishlistcart/{{ hotel.id }}/" class="btn btn-secondary">Add to Wishlist</a>                </div>
+                <a href="/wishlist/wishlistcart/{{ hotel.id }}/" class="btn btn-secondary">Add to Wishlist</a></div>
             </div>
         
             {% endfor %}

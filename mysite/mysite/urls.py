@@ -22,6 +22,7 @@ from user import views as userviews
 from hotel import views as hotelviews
 from destination import views as wishlistviews
 from location import views as locationviews
+from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),

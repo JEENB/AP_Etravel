@@ -5,7 +5,6 @@ from hotel.models import Review, ReviewForm, Booking, BookingForm, BookingInfo, 
 from user.models import Profile
 from django.utils.crypto import get_random_string
 from hotel.models import Hotel
-# Create your views here.
 
 
 def addreview(request, id):
@@ -105,3 +104,5 @@ def billing(request):
         'profile'       : profile
     }
     return render(request, 'billing.html', context)
+
+

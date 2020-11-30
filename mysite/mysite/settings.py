@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     #admin installed
     'ckeditor',
     'ckeditor_uploader',
+    'django_filters',
+
     'home',
     'hotel',
     'user',

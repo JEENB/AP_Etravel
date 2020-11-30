@@ -30,6 +30,24 @@
       </a>
     </div>
   </section>
+<div class="view-details">
+    <h3>{{loc.location}}, {{loc.country}}</h3>     
+    <p>{{ loc.description|safe }} </p>
 
+    <p>{{ loc.places|safe }} </p>
+    <style>
+      .view-details { 
+        margin: 30px auto;  
+        padding: 30px;    
+      }
+      .view-details h3 {
+        text-align: center;
+      }
+      .view-details p {
+        font-family: "Roboto", sans-serif;
+        text-align: justify;
+      }
+    </style>
+</div>
 {% endblock %}
 {% block footer %} {% include 'footer.html' %}{% endblock %}

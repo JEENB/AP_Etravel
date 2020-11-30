@@ -49,11 +49,12 @@
             {% for locations in loc %}
 
               <div class="col">
-                <a href="">
+                <a href="/location/{{ locations.id }}">
                   <img src="{{ locations.image }}" alt="">
                 </a>
                 <div class="view">
-                  <p class="city">{{ locations.location }}, {{ locations.country }}</p>
+                  <p class="location">{{ locations.location }}</p>
+                  <p class="city">{{ locations.country }}</p>
                   <a href="/location/{{ locations.id }}" class="btn btn-secondary">View Details</a>
                 </div>
               </div>
@@ -76,8 +77,11 @@
              
               <div class="view">
                 <div><h4 class="title">{{ hotel.title }}</h4></div>
-                <div><p class="price">Rs. {{ hotel.price }} /night</p>
-                <p class="city">{{ hotel.location }}, {{ hotel.country }}</p></div>
+                <div>
+                  <p class="price">Rs. {{ hotel.price }} /night</p>
+                  <p class="location">{{ hotel.location }},</p>
+                
+                <p class="city">{{ hotel.country }}</p></div>
                 <div class="star-rating">
                   <i class="fa fa-star{% if hotel.averagerev < 1 %}-o empty{% endif %}"></i>
                   <i class="fa fa-star{% if hotel.averagerev < 2 %}-o empty{% endif %}"></i>

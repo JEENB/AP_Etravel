@@ -7,6 +7,10 @@ from django.core.paginator import Paginator
 from complaints.models import Complaint, ComplaintForm
 from django.contrib import messages
 from location.models import Locations
+from hotel.filters import HotelFilter
+from django.db.models import Q
+
+
 # Create your views here.
 
 def home_page_view(request):
@@ -24,7 +28,10 @@ def search_page_view(request):
         form = Search(request.POST)
         if form.is_valid():
             query           = form.cleaned_data['query']
-            search_hotel    = Hotel.objects.filter(title__icontains=query)
+            lookup = Q(title__icontains=query) | Q(location__icontains=query) 
+
+            search_hotel    = Hotel.objects.filter(lookup)
+            
             
             context={
                 'search_hotel': search_hotel,
@@ -42,7 +49,7 @@ def search_ajax(request):
     results = []
     for smart in hotels:
       hotel_json = {}
-      hotel_json = smart.title + ", " + smart.location
+      hotel_json = smart.title 
       results.append(hotel_json)
     data = json.dumps(results)
   else:
@@ -93,18 +100,30 @@ def hotel_detail_view(request, id, slug):
 
 def destination_nepal(request):
     hotels = Hotel.objects.filter(country=2)[:]
-    paginator       = Paginator(hotels,1)
+    hotel_filter = HotelFilter(request.GET, queryset = hotels)
+
+    paginator       = Paginator(hotel_filter.qs,9)
     page            = request.GET.get('page')
     hotels          = paginator.get_page(page)
     context = {
-        'hotels': hotels
+        'hotels': hotels,
+        'filter': hotel_filter
+
     }
     return render(request,'nepal.html',context)
 
 def destination_bhutan(request):
     hotels = Hotel.objects.filter(country=1)[:]
-    paginator       = Paginator(hotels,1)
+    hotel_filter = HotelFilter(request.GET, queryset = hotels)
+    
+
+    paginator       = Paginator(hotel_filter.qs,9)
     page            = request.GET.get('page')
     hotels          = paginator.get_page(page)
-    context = {'hotels': hotels}
+    
+    
+    context = {
+        'hotels': hotels,
+        'filter': hotel_filter
+    }
     return render(request,'bhutan.html',context)

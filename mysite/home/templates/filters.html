@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Bhutan  {% endblock %}
+{% block body %}
+{% load static %}
+
+
+<form method="GET">
+    {{ filtered_hotel.form.as_p }}
+    <input type="submit" value=" Filter">
+
+</form>
+
+
+{% for hotels in filtered_hotel %}
+<p>{{ hotels.title }}</p>
+{% endfor %}
+
+
+
+{% endblock %}
+{% block footer %} {% include 'footer.html' %}{% endblock %}
